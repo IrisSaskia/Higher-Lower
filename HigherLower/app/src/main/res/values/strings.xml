@@ -5,4 +5,6 @@
     <string name="button_lower">Lower</string>
     <string name="button_equals">Equals</string>
     <string name="button_higher">Higher</string>
+    <string name="correct">Correct</string>
+    <string name="incorrect">Incorrect</string>
 </resources>

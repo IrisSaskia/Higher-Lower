@@ -2,6 +2,7 @@ package com.example.higherlower
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_higher_lower.*
 import java.util.*
 
@@ -30,5 +31,40 @@ class MainActivity : AppCompatActivity() {
         lastThrow = currentThrow;
         currentThrow = (1..6).random();
         updateUI();
+    }
+
+    private fun onAnswerCorrect() {
+        Toast.makeText(this, getString(R.string.correct), Toast.LENGTH_LONG).show();
+    }
+
+    private fun onAnswerIncorrect() {
+        Toast.makeText(this, getString(R.string.incorrect), Toast.LENGTH_LONG).show();
+    }
+
+    private fun onHigherClick() {
+        rollDice();
+        if(currentThrow > lastThrow) {
+            onAnswerCorrect();
+        } else {
+            onAnswerIncorrect();
+        }
+    }
+
+    private fun onLowerClick() {
+        rollDice();
+        if(currentThrow < lastThrow) {
+            onAnswerCorrect();
+        } else {
+            onAnswerIncorrect();
+        }
+    }
+
+    private fun onEqualClick() {
+        rollDice();
+        if(currentThrow == lastThrow) {
+            onAnswerCorrect();
+        } else {
+            onAnswerIncorrect();
+        }
     }
 }
