@@ -19,6 +19,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
+        btnHigher.setOnClickListener {
+            onHigherClick();
+        }
+        btnLower.setOnClickListener {
+            onLowerClick();
+        }
+        btnEquals.setOnClickListener {
+            onEqualClick();
+        }
         updateUI();
     }
 
